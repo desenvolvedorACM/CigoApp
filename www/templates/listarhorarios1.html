@@ -1,0 +1,135 @@
+﻿<ion-view view-title="Horários Sogil">
+
+    <div class="bar bar-subheader bar-assertive static text-center hide">
+        <strong class="title">Itinerários da Sogil</strong>
+    </div>
+    <div class="bar bar-subheader static margin_topo_image_sogil hide">
+        <!--<div class="image_topo_linha"></div>-->
+        <img src="img/Topo_Tela_Horario.png" alt="" class="image_topo_linha" />
+        <!--<div class="painel">
+            <div class="col-md-3">
+
+            </div>
+        </div>
+        <div class="col-xs-12 addBordaCima">
+            <div class="col-xs-6 text-center addBordaBaixo">
+                <img src="img/onibus_verde.png" alt="" />
+            </div>
+            <div class="col-xs-6 text-center addBordaBaixo">
+                <img src="img/relogio_verde.png" alt="" />
+            </div>
+        </div>-->
+    </div>
+
+    <ion-content>
+        <div div="divTableHorarios" class="margin_topo_horario">
+            <table class="table table-responsive mytab">
+                <thead>
+                    <tr style="background:#2f3650; color: #FFF; font-weight: bold">
+                        <td width="5%"></td>
+                        <td width="14%"><b>Prefixo</b></td>
+                        <td><b>Placa</b></td>
+                        <td class="text-center"><b>Horário Saída</b></td>
+                        <!--<td><b>Tem GPS</b></td>-->
+                        <td width="5%"></td>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr ng-repeat="item in lstHorariosNGSValidos" ng-click="HorarioSelecionado(item)">
+                        <td><img src="img/relagio_preto_1.png" alt="" class="img" width="35" height="35" /></td>
+                        <td>
+                            <h5>{{ item.Prefixo }}</h5>
+                        </td>
+                        <td>
+                            <h5> {{ item.Placa }}</h5>
+                        </td>
+                        <td class="text-center">
+                            <div style="border-radius: 8px; border:1px solid #000; width: 135px; height: 45px">
+                                <div style="background: #4CAF50; color:#FFF; height: 20px">
+                                    <label> {{ item.Modalidade }}</label>
+                                </div>
+                                <div>
+                                    <label> {{ item.HorarioSaida }}</label>
+                                </div>
+                            </div>
+                        </td>
+                        <!--<td>
+                            <div ng-switch="item.TemGPS">
+                                <div ng-switch-when="true">
+                                   <h5 style="background:#4CAF50; padding: 5px 5px 5px 5px; width: 100%">{{item.TemGPS ? 'Sim' : 'Não'}}</h5>
+                                </div>
+                                <div ng-switch-default>
+                                   <h5 style="background:firebrick; padding: 5px 5px 5px 5px; width: 100%">{{item.TemGPS ? 'Sim' : 'Não'}}</h5>
+                                </div>
+                            </div>
+                        </td>-->
+                        <td class="text-left">
+                            <i class="glyphicon glyphicon-menu-right"></i>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div id="divAviso" class="row invisivel">
+                <div class="col-xs-12 text-center">
+                    <h5>Nenhum horário encontrado para este Itinerário.</h2>
+                </div>
+            </div>
+
+            <!--<ion-list>
+                <ion-item ng-repeat="item in Itinerario" nav-clear menu-close class="item-icon-left item-avatar">
+                    <img src="img/onibus_preto.png" alt="" />
+                    <h3 class="text-left">{{ item.Nome }}</h3>
+
+                    <ion-item ng-repeat="item1 in lstHorariosNGS" ng-click="HorarioSelecionado(item)" nav-clear menu-close class="item-icon-left item-avatar">
+                        <img src="img/relogio_preto.png" alt="">
+                        <h3 class="text-left">{{ item1.HorarioSaida }}</h3>
+                    </ion-item>
+
+                </ion-item>
+            </ion-list>-->
+        </div>
+
+
+        <!-- JANELA MODAL HORARIOS.
+            ============================================ -->
+        <script id="ModalHorarios.html" type="text/ng-template">
+            <ion-modal-view class="ion-modal_linhas">
+                <div class="bar bar-subheader bar-positive static text-center">
+                    <strong class="title">Horários dos Ônibus</strong>
+                </div>
+
+                <div id="divCorpo" class="popContaTempoOnibus">
+                    <br>
+                    <div class="col-xs-12 font_pop_tempo">
+                        <b>Tempo estimado de chegada: </b><br/><br>
+                        <!--<b>Distância: </b><span id="lbDistance"></span><br/><br/>-->
+                    </div>
+
+                    <div class="col-xs-12">
+                        <div class="col-xs-6">
+                            <img src="img/icone_relogio.png" alt="" width="35" height="35" />&nbsp
+
+                            <span style="vertical-align:middle; margin-top: 8px;position: absolute;" class="font_duracao" id="lbDuration"></span>
+
+                        </div>
+                        <div class="col-xs-6 text-right">
+                            <img src="img/Parada_azul_50.png" alt="" width="35" height="auto" />
+                        </div>
+
+                        <div class="col-xs-12">
+                            <!--<progress max="100" id="pg"></progress>-->
+                            <progress max="100" value="0" id="pg">
+                                Progresso <strong>:. de 60% feito </strong>
+                                <Progresso/>
+                                <!--<p> <img src="img/BarraProgresso.gif" alt="" /></p>-->
+                        </div>
+                    </div>
+
+    </ion-content>
+    </ion-modal-view>
+    </script>
+
+    </ion-content>
+</ion-view>

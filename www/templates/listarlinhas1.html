@@ -1,0 +1,65 @@
+﻿<ion-view view-title="ITINERÁRIOS SOGIL">
+
+    <div class="bar bar-subheader bar-assertive static text-center hide">
+        <strong class="title">Itinerários da Sogil</strong>
+    </div>
+    <div class="bar bar-subheader static margin_topo_image_sogil" style="background: #ddd; border-bottom:2px solid #000">
+        <!--<div class="image_topo_linha"></div>-->
+        <img src="img/Topo_Tela_Horario.png" alt="" class="image_topo_linha" />
+
+
+        <!--<div class="list">
+
+            <div class="item item-input-inset">
+                <label class="item-input-wrapper">
+            <input type="text" 
+            ng-model="dsLinhas" list="lstItinerarios" placeholder="Pesquisar Itinerário" style="height: 45px; width: 100%; ">
+
+                      <datalist id="lstItinerarios">
+                          <option ng-repeat="item in lstLinhas" value="{{item.Nome}} / {{item.idlinha}}">{{item.idlinha}}</option>
+                      </datalist>
+
+                </label>
+                <button ng-click="buscarHorariosNGS(this);" class="button button-default">
+                        <i class="icon ion-search placeholder-icon"></i>
+                 </button>
+            </div>
+        </div>-->
+    </div>
+
+    <ion-content>
+
+        <div class="margin_topo_linha">
+
+            <!--<ion-list class="animate-ripple">
+                <ion-item ng-repeat="item in lstLinhas" ng-click="buscarParadas(item)" nav-clear menu-close class="item-icon-right item-avatar">
+                    <img src="img/logo_sogil_redondo.png" alt="" class="borda_redonda">
+                    <h3 class="text-left">{{ item.Nome }}</h3>
+                </ion-item>
+            </ion-list>-->
+
+            <ion-list>
+                <ion-item ng-repeat="item in lstLinhas" ng-click="buscarHorariosNGSTab(item)" nav-clear menu-close class="item-icon-right item-avatar">
+                    <img src="img/logo_sogil_redondo.png" alt="" class="borda_redonda">
+                    <h3 class="text-left">{{ item.Nome }}</h3>
+                </ion-item>
+
+
+                <!--<ion-item ng-repeat="item in lstLinhas">
+                    <div class="painel_esq">
+                        <!--class="item item-avatar"-->
+                <!--<img src="img/logo_sogil_redondo.png" width="50" height="50">-->
+                <!--</div>-->
+
+                <!--<div class="painel_dir">-->
+                <!--<p class="fonte_Nome" ng-click="buscarHorarios(item)">{{ item.Nome }}</p>-->
+                <!--<ion-option-button class="button bar-balanced fonte_Arrastar text-center" ng-click="buscarHorarios(item)">
+                            <label class="text-right">{{ item.Nome }}</label>
+                        </ion-option-button>-->
+                <!--</div>-->
+                <!--</ion-item>-->
+
+            </ion-list>
+        </div>
+    </ion-content>
+</ion-view>

@@ -1,0 +1,288 @@
+﻿<ion-view view-title="Pesquisar Ônibus">
+    <ion-content>
+
+        <div id="header1" class="bar bar-subheader bar-subheader_pesquisa_onibus static hide">
+
+            <br>
+            <div class="col-xs-12 font_pop_tempo">
+                <b>Tempo estimado de chegada: </b><br/><br>
+                <!--<b>Distância: </b><span id="lbDistance"></span><br/><br/>-->
+            </div>
+
+            <div class="col-xs-12">
+                <div class="col-xs-6">
+                    <img src="img/icone_relogio.png" alt="" width="30" height="30" />&nbsp
+
+                    <span id="lbDuration1" style="vertical-align:middle; margin-top: 8px;position: absolute;" class="font_duracao"></span>
+
+                </div>
+                <div class="col-xs-6 text-right">
+                    <img src="img/Parada_azul_50.png" alt="" width="35" height="auto" />
+                </div>
+
+                <div class="col-xs-12">
+                    <!--<progress max="100" id="pg"></progress>-->
+                    <progress value="0" id="pg1">
+                        Progresso <strong>:. de 60% feito </strong>
+                        <Progresso/>
+                        <!--<p> <img src="img/BarraProgresso.gif" alt="" /></p>-->
+                </div>
+            </div>
+
+
+            <div class="col-xs-12">
+                <div class="col-xs-6">
+                    <button type="button" class="btn-lg btn-danger btn-block" ng-click="CancelaViagem();">Cancelar</button>
+                </div>
+                <div class="col-xs-6">
+                    <button class="btn-lg btn-success btn-block"><i class="glyphicon glyphicon-star-empty"></i>&nbspFavoritar</button>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- BUSCO OS ITINERARIOS.
+            ============================================ -->
+        <div id="divBsucaItinerarios" class="navbar navbar-fixed-top divBsucaItinerarios invisible">
+            <div class="panel panel-default" style="background:  transparent !important">
+                <div class="panel-body">
+                    <div class="form-group-lg input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                        <select id="lstItinerarios" ng-model="lstItinerarios" style="font-weight: bold" ng-change="LocalizarOnibus(this);">
+                                <option value="">Selecione um Itinerário</option>
+                                <option ng-repeat="linhas in lstLinhas" value="{{linhas.idLinha}}">{{linhas.NomeLinha}}</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- TODO O CONTEUDO DO MAPA
+            ============================================ -->
+        <div class="config_mapa">
+            <!--<input id="pac-input" class="controls" type="search" placeholder="Selecione sua parada no mapa">-->
+            <div id="map_content" class="map_content"></div>
+        </div>
+
+
+        <!-- POPUP QUE CONTA O TEMPO DO ÔNIBUS.
+            ============================================ -->
+        <div id="divCorpo" class="popTempoOnibus invisible">
+            <br>
+            <div class="col-xs-12 font_pop_tempo">
+                <b>Tempo estimado de chegada: </b><br/><br>
+                <!--<b>Distância: </b><span id="lbDistance"></span><br/><br/>-->
+            </div>
+
+            <div class="col-xs-12">
+                <div class="col-xs-6">
+                    <img src="img/icone_relogio.png" alt="" width="35" height="35" />&nbsp
+
+                    <span style="vertical-align:middle; margin-top: 8px;position: absolute;" class="font_duracao" id="lbDuration"></span>
+
+                </div>
+                <div class="col-xs-6 text-right">
+                    <img src="img/Parada_azul_50.png" alt="" width="35" height="auto" />
+                </div>
+
+                <div class="col-xs-12">
+                    <!--<progress max="100" id="pg"></progress>-->
+                    <progress max="100" value="21" id="pg">
+                        Progresso <strong>:. de 60% feito </strong>
+                        <Progresso/>
+                        <!--<p> <img src="img/BarraProgresso.gif" alt="" /></p>-->
+                </div>
+            </div>
+
+
+            <div class="col-xs-12">
+                <div class="col-xs-6">
+                    <button type="button" ng-model="btCancelarViagem" class="btn-lg btn-danger btn-block" ng-click="CancelaViagem();">Cancelar</button>
+                </div>
+                <div class="col-xs-6">
+                    <button class="btn-lg btn-success btn-block"><i class="glyphicon glyphicon-star-empty"></i>&nbspFavoritar</button>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <!-- SELECIONA ÔNIBUS MUNICIPAL, INTERMUNICIPAL.
+            ============================================ -->
+        <div class="popSelecionaTipoOnibus invisible">
+
+            <div class="col-xs-12">
+                <div class="horarioseitinerarios">
+                    <p>Selecione a opção de transporte e veja os horários e itinerários disponíveis:</p>
+                </div><br />
+                <div class="col-xs-6 text-center">
+                    <img src="img/bus_municipal.png" alt="" class="img"  />
+                    <p><b>Municipal</b></p>
+                </div>
+                <div class="col-xs-6 text-center">
+                    <img src="img/bus_intermunicipal.png" alt="" class="img"  />
+                    <p><b>InterMunicipal</b></p>
+                </div>
+
+                <!--<div class="col-xs-6 text-center">
+                    <button class="btn-lg btn-block btn-primary">
+                        <a id="divMun"  nav-clear menu-close>
+                            <img src="img/bus_municipal.png" alt="" class="img img-rounded"  width="100" height="auto" />
+                            <p><b>Municipal</b></p>
+                        </a>
+                    </button>
+                </div>
+                <div class="col-xs-6 text-center">
+                    <button class="btn-lg btn-block btn-primary">
+                        <a id="divInterMun" nav-clear menu-close>
+                            <img src="img/bus_intermunicipal.png" alt="" class="img img-rounded"  width="155" height="auto"/>
+                            <p><b>InterMunicipal</b></p>
+                         </a>
+                    </button>
+                </div>-->
+            </div>
+        </div>
+
+
+
+        <!-- BLOQUEIA O FUNDO.
+            ============================================ -->
+        <div id="divFundo" class="Fundo invisible">
+        </div>
+
+
+
+        <!-- POPUP DE CHEGADA DO ÔNIBUS.
+            ============================================ -->
+        <div id="divChegada" class="pop_chegada_onibus invisible">
+            <div class="col-xs-12 text-center">
+                <h1 style="color:#000"><span style="font-size: 22px; font-family: Arial, Helvetica, sans-serif">Seu ônibus está 
+                    <br></span> Chegando!</h1>
+            </div>
+
+            <div class="col-xs-12 text-center">
+                <button type="button" class="btn-lg btn-success btn-block" onclick="ocultabotao();">OK</button>
+            </div>
+        </div>
+
+
+        <!-- PRIMEIRA POPUP A APARECER.
+            ============================================ -->
+        <div id="divInicio" class="popinicio invisible">
+            <div class="row">
+                <div class="col-xs-3 text-left">
+                    <img src="img/loader.gif" alt="" width="40" height="40"></img>
+                </div>
+                <div class="col-xs-9 text-left">
+                    <p style="color: darkorange; vertical-align:bottom">Aguarde...</p>
+                    <!--<img src="img/BarraProgresso.gif" alt="" />-->
+                </div>
+            </div>
+        </div>
+
+
+        <!-- JANELA MODAL ANTIGA.
+            ============================================ -->
+        <script id="modalItinerarios.html" type="text/ng-template">
+            <ion-modal-view class="ion-nifty-modal">
+                <div class="ion-modal-content-custom">
+                    <ion-content class="padding">
+                        <div class="bar bar-subheader bar-positive static text-center">
+                            <strong class="title">Escolha um Itinerário</strong>
+                        </div>
+                        <br />
+
+                        <input type="text" ng-model="linhas" list="lstItinerarios" ng-blur="LocalizarOnibus(this);" style="border:1px solid #000"
+                            class="pesquisa_itinerario" placeholder="informe seu itinerário">
+                            <datalist id="lstItinerarios" style="font-weight: bold">
+                                <option ng-repeat="linhas in lstLinhas" value="{{linhas.NomeLinha}}">{{linhas.idLinha}}</option>
+                            </datalist>
+                            <br />
+                            <button class="button button-assertive" ng-click="Fechar();">Fechar</button>
+                            <!--<button class="button button-full button-positive" ng-click="closeModal()">Close Modal</button>-->
+                    </ion-content>
+                </div>
+            </ion-modal-view>
+        </script>
+
+
+        <!-- JANELA MODAL ITINERARIOS.
+            ============================================ -->
+        <script id="ModalItinerario.html" type="text/ng-template">
+            <ion-modal-view class="ion-modal_linhas">
+                <div class="bar bar-subheader bar-assertive static text-center">
+                    <strong class="title">Itinerários da Sogil</strong>
+                </div>
+                <div class="bar bar-subheader static">
+                    <div class="image_topo_linha"></div>
+                    <!--<img src="img/Topo_Tela_Horario.png" alt="" width="430" height="145"/>-->
+                </div>
+
+                <!--<ion-content class="padding" style="margin-top:40px; position:absolute">
+                    <div class="panel panel-default">
+                        <div class="panel-body">
+                            <div class="form-group-lg input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+                                <input type="text" class="form-control" placeholder="Buscar Itinerário" required="required" style="border: 1px solid #808080"
+                                />
+                                <br />
+                            </div>
+                        </div>
+                    </div>
+                </ion-content>-->
+
+                <!--<ion-list>
+                    <ion-item ng-repeat="item in lstLinhas" item="item" class="item-animate">
+                        <div style="width:100%">
+                            <div class="painel_esq">
+                                <img src="img/logo_sogil_redondo.png" width="60" height="60">
+                            </div>
+                            <div class="painel_dir">
+                                <p style="font-size:12px">{{ item.Nome }}
+                            </div>
+                        </div>
+                        <!--<p style="font-size:12px; font-family:Arial">{{ item.Nome }}</p>-->
+                <!--<ion-option-button class="button button-positive" ng-click="edit(item)">
+                    <b>selecionar</b>
+                </ion-option-button>
+                </ion-item>
+                </ion-list>-->
+
+                <ion-content class="padding" style="margin-top:170px; position:absolute; border:1px solid #ddd">
+                    <ion-list>
+                        <ion-item ng-repeat="item in lstLinhas" item="item" class="item-animate">
+                            <div class="painel_esq">
+                                <img src="img/logo_sogil_redondo.png" width="60" height="60">
+                            </div>
+
+                            <div class="painel_dir">
+                                <p class="fonte_Nome">{{item.Nome }}</p>
+                                <!--<p style="font-size:12px; font-family:Arial">{{ item.Nome }}</p>-->
+                                <ion-option-button style="height:40px" class="button bar-balanced" ng-click="buscarHorarios(item)">
+                                    <b>selecionar</b>
+                                </ion-option-button>
+                            </div>
+
+                        </ion-item>
+                    </ion-list>
+                </ion-content>
+            </ion-modal-view>
+        </script>
+
+
+        <!--<div ng-show="erro != ''" class="alert alert-danger navbar-fixed-top" role="alert">
+            <a href="#" class="close" data-dismiss="alert" onclick="return false">x</a>
+            <p>{{erro}}</p>
+        </div>
+
+        <div ng-show="erro != ''" class="alert alert-success navbar-fixed-top hide" role="alert">
+            <a href="#" class="close" data-dismiss="alert" onclick="return false">x</a>
+            <p>{{erro}}</p>
+        </div>-->
+
+    </ion-content>
+</ion-view>

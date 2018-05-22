@@ -1,0 +1,41 @@
+﻿<ion-view view-title="Logar Sistema">
+  <ion-content style="background: #358ad3">
+
+    <div id="login" style="margin-top: 25px; position: absolute">
+
+      <div class="col-xs-12">
+        <a class="btn-lg btn-block btn-social btn-facebook" ng-click="LoginwithFacebook();">
+          <span class="fa fa-facebook"></span>Entrar com o facebook
+        </a>
+
+        <a class="btn-lg btn-block btn-social btn-google" ng-click="LoginwithGoogle();">
+          <span class="fa fa-google"></span>Entrar com o Google
+        </a>
+        <br />
+        <br />
+      </div>
+
+      <div class="col-xs-12">
+
+        <form id="form1" ng-submit="Logar();">
+
+          <div class="form-group-lg form-inline">
+
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+              <input type="text" id="email" ng-model="email" placeholder="informe seu e-mail" class="form-control" />
+            </div>
+            <br />
+            <div class="input-group">
+              <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+              <input type="password" id="senha" ng-model="senha" placeholder="informe sua senha" class="form-control" />
+            </div>
+            <br />
+            <button class="btn-lg btn-primary btn-block" style="padding: 10px 10px 10px 10px">Logar</button>
+          </div>
+        </form>
+      </div>
+
+    </div>
+  </ion-content>
+</ion-view>

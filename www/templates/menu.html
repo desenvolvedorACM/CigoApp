@@ -1,0 +1,218 @@
+﻿<ion-side-menus>
+    <ion-side-menu-content>
+
+        <ion-nav-bar class="bar-header bar-dark-cigo navbar_cigo" align-title="center">
+            <ion-nav-back-button class="no-text">
+            </ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear" menu-toggle="left">
+                     <img src="img/ICONE MENU.png" alt="" width="30" height="30" class="posiciona_ione_left_header" />
+                 </button>
+                <!--<button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>-->
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right">
+                <button class="button button-icon button-clear" menu-toggle="right" ng-click="PesquisaOnibus();">
+                    <img src="img/ICONE ATUALIZAR.png" alt="" width="30" height="30"  class="posiciona_ione_right_header"/>
+                </button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+
+        <!--<ion-nav-bar class="bar-header bar-dark" align-title="center">
+            <ion-nav-back-button class="no-text">
+            </ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                 <button class="button button-icon button-clear" menu-toggle="left">
+                     <img src="img/ICONE MENU.png" class="img" alt="" width="27" height="27" style="position: absolute; margin-top: -13px; margin-left:-20px " />
+                 </button>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right">
+                 <button class="button button-icon button-clear" menu-toggle="right">
+                     <button class="button button-icon button-clear ion-android-more-vertical" id="menu-popover" ng-click="popover.show($event)"></button>-->
+        <!--<img src="img/ICONE ATUALIZAR.png" alt="" width="27" height="27" style="position: absolute; margin-top: -13px; right: 5px" />-->
+        <!--</button>
+            </ion-nav-buttons>
+        </ion-nav-bar>-->
+
+        <!--<ion-nav-bar class="bar-header bar-dark hide">
+            <ion-nav-back-button class="no-text">
+            </ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+            <ion-nav-buttons side="right">
+                <button class="button button-icon button-clear ion-android-more-vertical" id="menu-popover" ng-click="popover.show($event)"></button>
+            </ion-nav-buttons>
+        </ion-nav-bar>-->
+
+        <!--<a href="#/app/motion">
+                <button id="fab" class="button button-positive button-fab button-fab-bottom-right">
+                    AVANÇAR &nbsp
+                <i class="icon ion-social-twitter"></i>
+                </button>
+         </a>-->
+        <!-- <button id="fab" class="button button-positive button-fab button-fab-bottom-right">
+            <i class="icon ion-social-twitter"></i>
+        </button>-->
+
+        <ion-nav-view name="menuContent"></ion-nav-view>
+
+    </ion-side-menu-content>
+
+
+    <!-- Right menu -->
+    <ion-side-menu side="right hide">
+        <ion-view view-title="Pesquisar Onibus">
+            <ion-content>
+                <div class="im-wrapper">
+                    <h4>Pesquisas</h4>
+                </div>
+            </ion-content>
+        </ion-view>
+    </ion-side-menu>
+
+    <!-- Left menu -->
+    <ion-side-menu side="left" drag-content="true">
+        <ion-header-bar class="expanded">
+            <div class="row">
+                <div style="float:left; width:130px;">
+                    <img src="img/icone_usuario.png" class="avatar motion spin fade">
+                </div>
+                <div style="float:right; width:150px;">
+                    <span style="position:absolute; top:50%; margin-top:-10px">Novo Usuário</span>
+                </div>
+            </div>
+            <div class="menu-bottom hide">
+                Novo Usuário
+            </div>
+        </ion-header-bar>
+
+        <ion-content class="stable-bg has-expanded-header image_menu">
+
+            <table class="table" style="margin-bottom: 0px">
+                <tr>
+                    <td width="16%" style="border-top:0">
+                        <img src="img/icone_onibus.png" alt="" width="100%" height="auto" />
+                    </td>
+                    <td style="font-size:18px; border-top:0;vertical-align:bottom">
+                        <b>Meu Ônibus</b>
+                    </td>
+                    <td style="border-top:0">
+                    </td>
+                </tr>
+            </table>
+
+            <table class="table">
+                <tr style="padding: 2px">
+                    <td class="text-right" width="23%" style="vertical-align: middle">
+                        <img src="img/icone_pesquisar.png" alt="" width="45%" height="auto" />
+                    </td>
+                    <td style="vertical-align: top; text-align: left">
+                        <ion-item nav-clear menu-close href="#/app/pesquisaronibus/0/0/0" style="border:0; text-align: left">
+                            <span class="font_menus_tam_20">Pesquisar Ônibus</span>
+                        </ion-item>
+                        <!--<span ng-click="PesquisaOnibus();">Pesquisar Ônibus</span>-->
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-right" width="23%" style="vertical-align: middle; border-top: 0">
+                        <img src="img/icone_meus_onibus.png" alt="" width="45%" height="auto" />
+                    </td>
+                    <td style="vertical-align: middle;  border-top: 0">
+                        <ion-item nav-clear menu-close href="#app/meusonibus" style="border:0; text-align: left">
+                            <span class="font_menus_tam_20">Meus Ônibus</span>&nbsp&nbsp<span class="badge hide" style="background:darkorange; color:#000;">(10)</span>
+                        </ion-item>
+                        <!--<span ng-click="MeusOnibus();">Meus Ônibus</span>&nbsp&nbsp<span class="badge" style="background:#0094ff; color:#000;">(10)</span>-->
+                    </td>
+                    <td style="border-top:0">
+                    </td>
+                </tr>
+            </table>
+
+            <table class="table" style="margin-bottom: 0px">
+                <tr>
+                    <td width="16%" style="border-top:0">
+                        <img src="img/icone_lojas.png" alt="" width="100%" height="auto" />
+                    </td>
+                    <td style="font-size:18px; border-top:0;vertical-align:bottom">
+                        <b>O que há por perto?</b>
+                    </td>
+                    <td style="border-top:0">
+                    </td>
+                </tr>
+            </table>
+
+            <table class="table">
+                <tr>
+                    <td class="text-right" width="23%">
+                        <img src="img/icone_olho.png" alt="" width="45%" height="auto" />
+                    </td>
+                    <td style="font-size:15px; vertical-align:top">
+                        <ion-item nav-clear menu-close href="#/app/configuracoes" style="border:0; text-align: left">
+                            <span class="font_menus_tam_20">Ver por Perto</span>
+                        </ion-item>
+                        <!--<label>Ver por Perto</label>-->
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-right" width="23%" style="border-top:0">
+                        <img src="img/icone_pesquisar.png" alt="" width="45%" height="auto" />
+                    </td>
+                    <td style="font-size:15px;border-top:0; vertical-align:top">
+                        <ion-item nav-clear menu-close href="#/app/configuracoes" style="border:0; text-align: left">
+                            <span class="font_menus_tam_20">Pesquisar</span>
+                        </ion-item>
+                        <!--<label>Pesquisar</label>-->
+                    </td>
+                    <td style="border-top:0">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="text-right" width="23%" style="border-top:0">
+                        <img src="img/icone_meus_lugares.png" alt="" width="45%" height="auto" />
+                    </td>
+                    <td style="font-size:15px;border-top:0; vertical-align:top">
+                        <ion-item nav-clear menu-close href="#/app/configuracoes" style="border:0; text-align: left">
+                            <span class="font_menus_tam_20">Meus Lugares&nbsp&nbsp<span class="badge hide" style="background:darkorange; color:#000;">(8)</span></span>
+                        </ion-item>
+                        <!--<label>Meus Lugares</label>&nbsp&nbsp<span class="badge" style="background:darkorange; color:#000;">(8)</span>-->
+                    </td>
+                    <td style="border-top:0">
+                    </td>
+                </tr>
+            </table>
+
+            <!-- Sobre -->
+            <table class="table">
+                <tr>
+                    <td width="16%">
+                        <img src="img/icone_engrenagem.png" alt="" width="100%" height="auto" />
+                    </td>
+                    <td style="font-size:18px;vertical-align:top">
+                        <ion-item nav-clear menu-close href="#/app/configuracoes" style="border:0; text-align: left">
+                            <span class="font_menus_tam_20">Ajustes</span>
+                        </ion-item>
+                        <!--<span ng-click="Configuracoes();">Configurações</span>-->
+                    </td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td width="16%">
+                        <img src="img/icone_sobre.png" alt="" width="100%" height="auto" />
+                    </td>
+                    <td style="font-size:18px;vertical-align:top">
+                        <ion-item nav-clear menu-close href="#" ng-click="DirecionaLoginRedeSocial();" style="border:0; text-align: left">
+                            <span class="font_menus_tam_20">Reportar Informações</span>
+                        </ion-item>
+                    </td>
+                    <td></td>
+                </tr>
+            </table>
+
+        </ion-content>
+    </ion-side-menu>
+
+</ion-side-menus>

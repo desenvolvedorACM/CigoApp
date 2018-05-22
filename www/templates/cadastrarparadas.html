@@ -1,0 +1,107 @@
+﻿<ion-view view-title="Cadastrar paradas">
+  <ion-content>
+
+    <div class="bar bar-subheader bar-positive static text-center hide">
+      <strong class="title">Mapear Paradas</strong>
+    </div>
+
+    <form id="formCadastrarParada" class="hide" ng-submit="Gravar();">
+
+      <div class="list">
+        <label class="item item-input">
+        <input type="text" placeholder="First Name">
+    </label>
+        <label class="item item-input">
+        <input type="text" placeholder="Last Name">
+    </label>
+        <label class="item item-input">
+        <textarea placeholder="Comments"></textarea>
+    </label>
+      </div>
+
+      <button class="button button-full button-large button-positive">
+            Gravar
+    </button>
+    </form>
+
+    <div class="container" role="main">
+
+      <div class="row" style="margin-top: 20px; position: absolute">
+        <div class="col-xs-12">
+
+          <form id="formCadastrarParada" class="form-inline" ng-controller="CtrlMapearParada">
+            <div class="form-group-lg">
+              <div class="col-md-2">
+                <label class="control-label"><b></b></label>
+              </div>
+              <div class="col-md-10">
+                <input type="text" id="dsNomeParada" placeholder="Nome Parada" ng-model="nome_parada" class="form-control" autofocus/>
+              </div>
+            </div>
+
+            <!--<div class="form-group">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input id="CNPJCPF" ng-model="CNPJCPF" class="form-control" placeholder="Informe o Usuário ou CNPJ" type="text" autofocus
+                            />
+                        </div>
+                    </div>-->
+            <div class="form-group-lg hide">
+              <div class="col-md-2">
+                <label class="control-label"><b></b></label>
+              </div>
+              <div class="col-md-10">
+                <input type="text" id="dsNroParada" placeholder="Nro Parada" ng-model="num_parada" class="form-control" />
+              </div>
+            </div>
+
+            <div class="form-group-lg">
+              <div class="col-md-2">
+                <label class="control-label"><b></b></label>
+              </div>
+              <div class="col-md-10">
+                <input type="text" id="dslat" placeholder="Latitude" ng-model="lat" class="form-control" />
+              </div>
+            </div>
+
+            <div class="form-group-lg">
+              <div class="col-md-2">
+                <label class="control-label"><b></b></label>
+              </div>
+              <div class="col-md-10">
+                <input type="text" id="dslng" placeholder="Longitude" ng-model="lng" class="form-control" />
+              </div>
+            </div>
+
+            <!--<div class="form-group-lg">
+							<div class="col-md-2">
+								<label class="control-label"><b></b></label>
+							</div>
+							<div class="col-md-10">
+								<input type="text" id="dsendereco" placeholder="Endereco" ng-model="endereco" class="form-control" />
+							</div>
+						</div>-->
+
+            <div class="form-group">
+              <button class="button button-full button-large button-positive" ng-click="MarcarParada();">
+                                Marcar Parada
+                            </button>
+              <br>
+              <button class="button button-full button-large button-positive" ng-click="Gravar();">
+                               Gravar Parada
+                            </button>
+              <!--<input type="submit" id="btGravar"  style="padding: 6px 6px 6px 6px" class="btn btn-primary btn-block" value="Gravar" />-->
+            </div>
+          </form>
+          <!--<button class="button button-full button-large button-positive hide" ng-click="insert();">
+                         Gravar Parada
+                 </button></br>-->
+          <button class="button button-full button-large button-positive hide" ng-click="select();">
+                         Consultar Parada
+                 </button>
+        </div>
+      </div>
+    </div>
+
+  </ion-content>
+</ion-view>

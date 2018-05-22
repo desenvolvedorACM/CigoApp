@@ -1,0 +1,28 @@
+﻿<ion-view view-title="Horários e itinerários" hide-nav-bar="{{hideNavBar}}">
+    <!--hide-back-button="{{hideBackButton}}"-->
+    <ion-content class="fundo_tela_onibus">
+
+        <div class="centro_tela_linha">
+            <div class="horarioseitinerarios">
+                <span>
+				    Selecione a opção de transporte e veja os horários e itinerários disponíveis:
+				</span>
+            </div><br />
+            <div class="col-md-12">
+                <button class="btn-lg btn-block btn-primary">
+                <a  nav-clear menu-close href="#/app/pesquisaronibus/0/0">
+                    <p><b>Municipal</b></p>
+                    <img src="img/bus_municipal.png" alt="" />
+                </a>
+                 </button>
+                <br />
+                <button class="btn-lg btn-block btn-primary">
+                    <a nav-clear menu-close href="#/app/pesquisaronibus/0/0" style="border:0;">
+                        <p><b>InterMunicipal</b></p>
+                        <img src="img/bus_intermunicipal.png" alt="" />
+                    </a>
+               </button>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

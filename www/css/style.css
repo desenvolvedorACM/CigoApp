@@ -1,0 +1,1633 @@
+/* Empty. Add your own CSS if you like */
+/* Utilities */
+/*html, body {
+
+    margin: 0;
+    padding: 0 0 15px 0;
+    font-family: 'Traditional Arabic';
+    opacity: 1;
+    background: #808080;
+}*/
+
+body, html {
+
+    padding: 0px;
+    margin: 0px;
+    font-family: Tahoma,Verdana,Arial;
+}
+
+.link {
+    color: #116262;
+    font-weight: bold;
+}
+
+h2, h3 {
+    font-weight: bold;
+    text-align: center;
+}
+
+h1 {
+    font-weight: bold;
+    text-align: center;
+    font-size: 45px;
+}
+
+h4 {
+    color: #116262;
+    font-size: 22px;
+    margin-bottom: 16px;
+}
+
+    h4:first-child {
+        border-top: none;
+        padding-top: initial;
+    }
+
+.title-bordered {
+    border-top: solid 2px #bbb;
+    padding-top: 30px;
+}
+
+
+
+.no-border {
+    border: none;
+}
+
+.static {
+    position: static;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.border-top {
+    border-top: solid 1px #ccc;
+    padding-top: 30px;
+}
+
+.blue-grey-900 {
+    background-color: #263238 !important;
+    color: #fff;
+}
+/* Menu */
+
+.menu .bar.bar-header.expanded {
+    background-image: url('../img/fundo_menu_lateral.png');
+    background-size: 120%;
+    background-position: 0%;
+    transition: all .5s ease-in-out;
+}
+
+.menu.menu-left * {
+    font-weight: bold;
+    color:#fff;
+}
+
+.item-radio input:checked ~ .item-content {
+    background: transparent;
+}
+
+.menu-open .ion-navicon {
+    transform: rotate(-360deg);
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+    .menu-open .ion-navicon:before {
+        content: "\f2ca";
+    }
+
+.item.item-radio .radio-icon {
+    opacity: 1;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.item.item-radio:active .radio-icon {
+    opacity: 0;
+    transform: scale(1.6);
+    -webkit-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;
+}
+
+.directions.button-bar {
+    margin: 0 auto;
+    width: 33.333%;
+}
+
+    .directions.button-bar button {
+        line-height: 26px;
+    }
+
+.ion-arrow-right-c.top-left:before {
+    transform: rotate(-135deg);
+}
+
+.ion-arrow-right-c.top-right:before {
+    transform: rotate(-45deg);
+}
+
+.ion-arrow-right-c.bottom-left:before {
+    transform: rotate(-225deg);
+}
+
+.ion-arrow-right-c.bottom-right:before {
+    transform: rotate(45deg);
+}
+
+#modal {
+    background-color: #ef4e3a;
+    border-radius: 100%;
+    box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    height: 50%;
+    bottom: 0;
+    opacity: 0;
+    width: 700px;
+    -webkit-transition: all 0.3s ease-in-out;
+    transition: all 0.3s ease-in-out;
+}
+
+.expand #modal {
+    background-color: #DBDBDB;
+    border-radius: 0;
+    border-top: solid 4px #ef4e3a;
+    opacity: 1;
+    z-index: 9;
+}
+/* CODE */
+
+
+
+.code {
+    color: #333;
+    font-family: monospace;
+    padding: 10px;
+    white-space: pre;
+}
+
+.code-wrapper {
+    padding-bottom: 30px;
+    padding-top: 15px;
+}
+
+    .code-wrapper::before {
+        color: #1B5E20;
+        font-family: "Ionicons";
+        font-size: 18px;
+        font-style: normal;
+        font-weight: normal;
+        font-variant: normal;
+        text-transform: none;
+        text-rendering: auto;
+        line-height: 1;
+        -webkit-font-smoothing: antialiased;
+        content: '\f216 ';
+    }
+
+    .code-wrapper.active::before {
+        content: '\f207 ';
+    }
+
+    .code-wrapper .toggle {
+        color: #4CAF50;
+        cursor: pointer;
+        display: inline-block;
+        font-size: 16px;
+        font-weight: bold;
+        padding: 10px 8px;
+        text-decoration: underline;
+    }
+
+    .code-wrapper .code {
+        opacity: 0;
+        margin-top: -20px;
+        height: 0;
+        overflow: hidden;
+        position: absolute;
+        transition: 0.1s all ease-in-out;
+        z-index: 9999999999;
+    }
+
+    .code-wrapper.code-wrapper-last .code {
+        position: relative;
+    }
+
+    .code-wrapper.active .code {
+        background: #f9f9f9;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.5);
+        left: 16px;
+        height: initial;
+        margin-top: 15px;
+        padding: 15px;
+        right: 16px;
+        opacity: 1;
+        transition: 0.3s all ease-in-out;
+        width: initial;
+    }
+
+.popover {
+    left: initial !important;
+    right: 16px !important;
+    top: 16px !important;
+}
+
+.platform-android .popover {
+    margin-top: 10px;
+}
+
+
+.fundo {
+    margin: 0;
+    background: url(../img/tela_fundo_abertura_1.png)repeat 0px 0px;
+    background-size: cover;
+    color: #fff;
+    font-family: Arial;
+}
+
+
+.image_menu {
+    background: #030717;
+}
+
+/* unvisited link */
+a:link {
+    color: #fff;
+}
+
+/* visited link */
+a:visited {
+    color: #fff;
+}
+
+/* mouse over link */
+a:hover {
+    color: #ffd800;
+}
+
+/* selected link */
+a:active {
+    color: #31ca63;
+}
+
+.erro {
+    width: 100%;
+    font-family: monospace;
+    color: #000;
+    background: red;
+    border: 1px solid #ccc;
+    opacity: 0.6;
+    padding: 5px 5px 5px 5px;
+    font-weight: bold;
+}
+
+.sucesso {
+    width: 100%;
+    font-family: monospace;
+    color: #000;
+    background: #31ca63;
+    border: 1px solid #ccc;
+    opacity: 0.6;
+    padding: 5px 5px 5px 5px;
+    font-weight: bold;
+}
+
+
+.avanca {
+
+  position: fixed;
+  right: 0;
+  top: 80%;
+  margin-top: -2.5em;
+  width: 100%
+
+}
+
+.scroll-to-top {
+
+  background: #363636;
+  background: rgba(100, 100, 100, 0.4);
+  color: #FFF;
+  bottom: 4%;
+  cursor: pointer;
+  position: fixed;
+  right: 20px;
+  z-index: 999;
+  font-size: 16px;
+  text-align: center;
+  line-height: 40px;
+  width: 100%;
+
+}
+
+.menu .avatar {
+
+    top: 30px;
+    left: 16px;
+    height: 75px;
+    width: 75px;
+}
+
+fab.button-fab-bottom-right {
+    top: auto;
+    right: 16px;
+    bottom: 16px;
+    left: auto;
+    position: absolute;
+}
+
+.button.button-fab
+{
+    border-radius: 0;
+    width: 150px;
+    background: transparent;
+    font-size: 22px;
+    vertical-align: top;
+    font-weight: bold;
+}
+
+.tira_borda
+{
+    border-top: 0; 
+    border-bottom: 0; 
+    border-left: 0; 
+    border-right: 0;
+}
+
+
+
+.table_normal
+{
+    width: 100%;
+    max-width: 100%;
+}
+
+
+/* ---- SearchBox Google Maps------ */
+.controls {
+
+  margin-top: 10px;
+  border: 1px solid transparent;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  height: 32px;
+  outline: none;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+
+}
+
+#pac-input {
+
+  background-color: #fff;
+  font-family: Roboto;
+  font-size: 15px;
+  font-weight: 300;
+  margin-left: 12px;
+  padding: 0 11px 0 13px;
+  text-overflow: ellipsis;
+  width: 300px;
+}
+
+#pac-input:focus {
+  border-color: #4d90fe;
+}
+
+.pac-container {
+  font-family: Roboto;
+}
+
+#type-selector {
+  color: #fff;
+  background-color: #4d90fe;
+  padding: 5px 11px 0px 11px;
+}
+
+#type-selector label {
+  font-family: Roboto;
+  font-size: 13px;
+  font-weight: 300;
+}
+
+
+.circular {
+    -webkit-animation: rotate 2s linear infinite;
+    animation: rotate 2s linear infinite;
+    height: 100px;
+    position: relative;
+    width: 100px;
+}
+
+.loading-container .loading {
+    padding: 20px;
+    border-radius: 5px;
+    background-color: rgba(6, 6, 6, 0.82);
+    color: #fff;
+    text-align: center;
+    text-overflow: ellipsis;
+    font-size: 15px;
+}
+
+
+
+/* ---- SearchBox Google Maps------ */
+.controls {
+    margin-top: 10px;
+    border: 1px solid transparent;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    height: 32px;
+    outline: none;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+#pac-input {
+    background-color: #fff;
+    font-family: Roboto;
+    font-size: 15px;
+    font-weight: 300;
+    margin-left: 12px;
+    padding: 0 11px 0 13px;
+    text-overflow: ellipsis;
+    width: 300px;
+}
+
+    #pac-input:focus {
+        border-color: #4d90fe;
+    }
+
+.pac-container {
+    font-family: Roboto;
+}
+
+#type-selector {
+    color: #fff;
+    background-color: #4d90fe;
+    padding: 5px 11px 0px 11px;
+}
+
+    #type-selector label {
+        font-family: Roboto;
+        font-size: 13px;
+        font-weight: 300;
+    }
+
+
+
+.header-topo {
+    padding: 5px 5px 5px 5px;
+    background: #3367d6;
+}
+
+
+.header-sub-topo {
+    background: #000;
+}
+
+select {
+
+    height: 40px;
+    width: 100%;
+    padding: 6px 6px 6px 6px;
+    border:0;
+    border-bottom: 1px solid #808080;
+    /*-webkit-border-radius: 5px;
+    -mox-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;*/
+    -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+    -webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+    -o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.map_content {
+
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    background: #ccc;
+ }
+
+
+
+.popin {
+    background: #fff;
+    padding: 15px;
+    box-shadow: 0 0 20px #999;
+    border-radius: 2px;
+}
+
+.borda_mapa {
+    background: #fff;
+    padding: 15px;
+    box-shadow: 0 0 20px #999;
+    border-radius: 2px;
+}
+
+.campos_config
+{
+  -moz-border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  border-radius: 4px;
+  border: 1px solid #808080;
+}
+
+.borda {
+    background: #ddd;
+    padding: 15px;
+    box-shadow: 0 0 20px #999;
+    border-radius: 8%;
+}
+
+/* InfoWindow*/
+
+.iw-title {
+   font-family: 'Open Sans Condensed', sans-serif;
+   font-size: 22px;
+   font-weight: 400;
+   padding: 10px;
+   background-color: #48b5e9;
+   color: #000;
+   margin: 1px;
+   text-align: center;
+   border-radius: 2px 2px 0 0; /* De acordo com o arredondamento dos cantos da infowindow por padrão. */
+}
+
+/*.gm-style-iw {
+   width: 350px !important;
+   top: 0 !important;
+   left: 0 !important;
+   border-radius: 2px 2px 0 0;
+}*/
+
+
+
+a.item-content {
+   display: table-row;
+    /* color: inherit; */
+    text-decoration: none;
+}
+
+.item .badge {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: absolute;
+    top: -1px;
+    /*right: 32px;*/
+}
+
+
+
+.popinicio {
+    
+    position: absolute;
+    width: 260px;
+    height: 60;
+    top: 50%;
+    left: 50%;
+    margin-left: -130px;
+    margin-top: 150px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    z-index: 9899999;
+    border: 1px solid #000;
+    background-color: rgba(6, 6, 6, 0.82);
+    zoom: 1.5;
+    color:darkorange;
+}
+
+.popTempoOnibus {
+    
+    position: absolute;
+    width: 400px;
+    height: 200px;
+    top: 50%;
+    left: 50%;
+    margin-left: -200px;
+    margin-top: 20px;
+    border-radius: 8px;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    -o-border-radius: 8px;
+    -ms-border-radius: 8px;
+    z-index: 9899999;
+    border: 1px solid #000;
+    background-color: #FFF;
+    zoom: 1.1;
+    color:#000;
+ 
+}
+
+
+.pop_chegada_onibus {
+
+    position: absolute;
+    width: 455px;
+    height:200px;
+    top: 50%;
+    left: 50%;
+    margin-left: -227px;
+    margin-top: 200px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    z-index: 9899999;
+    border: 3px solid darkorange;
+    background-color:#fff;
+    /*zoom: 1.8;*/
+    color:#000;
+    font-size: 25px;
+}
+
+
+.popTempoOnibus .pop_chegada_onibus .popinicio .Fundo #divBsucaItinerarios  .modal-backdrop  .invisible {
+    display: none;
+}
+
+.JanModal
+{
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  padding: 0;
+  margin: 0;
+  filter: alpha(opacity=80);
+  opacity:0.80;
+  background: #ddd;
+  z-index: 999;
+}
+
+
+.Fundo {
+
+ height: 750px;
+ width: 100%;
+ margin-top: 0;
+ position: absolute; 
+ margin-left: 0px;
+ margin-right: 0;
+ background: rgba(16, 16, 16, 0.6);
+
+}
+
+.font_pop_tempo {
+
+    font-family: Arial, Helvetica, sans-serif ;
+    font-size: 14px;
+}
+
+
+
+/*input[type="button"] {
+
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -o-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}*/
+
+
+.pesquisa_itinerario {
+
+    width: 100%;
+    height: 55px;
+    background: rgba(245, 237, 166, 0.09);
+    font-weight: bold;
+    font: 300 14px/1.7 Roboto, sans-serif;
+    color: #000;
+    padding: 13px;
+    border: 2px solid #ef4e3a;
+    border-radius: 1;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+    outline: 0;
+    margin: 0;
+}
+
+
+
+.divBsucaItinerarios
+{
+    width: 100%;
+    height: 70px;
+    background: #fff;
+}
+
+.panel-body
+{
+   padding: 18px 10px 10px 10px;  
+}
+/* awesomplete */
+/*#combobox .dropdown-btn {
+    vertical-align: top;
+    height: 36.5px;
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+button {
+    padding: .1em .5em;
+    border-radius: .3em;
+    background: hsl(80, 80%, 80%);
+    background: linear-gradient(hsl(40, 70%, 80%), hsl(40, 70%, 70%));
+    border: 1px solid rgba(0,0,0,.3);
+    box-shadow: 0 1px white inset, 0 0.3em 0.3em -0.3em rgba(0,0,0,.3);
+}
+
+input, button {
+    font: inherit;
+    text-shadow: inherit;
+}*/
+
+
+.PopUp_sel_itinerario {
+    
+    position: absolute;
+    width: 450px;
+    height: 220px;
+    top: 50%;
+    left: 50%;
+    margin-left: -225px;
+    margin-top: 110px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -o-border-radius: 5px;
+    -ms-border-radius: 5px;
+    z-index: 9899999;
+    border: 0;
+    background-color: #FFF;
+    /*zoom: 1.8;*/
+    color:#000;
+ 
+}
+
+/*  Modals */
+.ion-nifty-modal {
+  width: 90%;
+  min-height: 0 !important;
+  height: 200px !important;
+  top: 25%;
+  left: 5%;
+  right: 5%;
+  bottom: 5%;
+  background-color: transparent;
+  border-radius: 10px;
+  -webkit-box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5); 
+  }
+
+
+.ion-modal_linhas {
+
+  width: 90%;
+  min-height: 0 !important;
+  height: 540px !important;
+  top: 10%;
+  left: 5%;
+  right: 5%;
+  bottom: 5%;
+  background-color: #FFF;
+
+  }
+
+
+.ion-nifty-modal .ion-modal-content-custom {
+  width: 100%;
+  height: 100%;
+  color: #FFF;
+  background-color: #FFF;
+  border-radius: 10px; 
+  border: 2px solid #795548
+  }
+
+.modal-backdrop {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1040;
+    background-color: rgba(146, 141, 141, 0.59);
+}
+
+.bar-dark-cigo
+{
+    background: #2f3650;
+    font-family: Arial, Helvetica, sans-serif;
+    color:#FFF;
+    
+}
+
+.font_menus_tam_20
+{
+   font-size: 18px;
+   font-weight: normal;
+}
+
+.font_duracao
+{
+    font-size: 22px;
+}
+
+
+.navbar_cigo{
+  height: 55px !important;
+}
+
+.loader_inicia_onibus {
+
+    position: relative;
+    margin: 0 auto;
+    width: 180px;
+    height: 120px;
+    zoom: 1.2;
+}
+
+.loader_pesquisa_onibus {
+
+    position: relative;
+    margin: 0 auto;
+    width: 160px;
+    height: 120px;
+    zoom: 1.2;
+}
+
+.loader_padrao {
+
+    position: relative;
+    margin: 0 auto;
+    width: 400px;
+    height: 30px;
+    /*zoom: 1.2;*/
+}
+
+.divPrefixo{
+    
+    width: 80px;
+    height: 80px;
+    background-color: #ef4e3a;
+    box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.2)
+}
+
+.icone_relogio {
+
+    border-radius: 90%;
+    width: 60px;
+    height: 60px;
+    float: left;
+    font-family: Arial;
+}
+
+.borda_redonda {
+
+    border-radius: 90%;
+    border: 1px solid #000;
+}
+
+.item h3 {
+
+    margin: 10px 0 0 0;
+    font-weight: normal;
+    font-size: 12px;
+}
+
+/*.item p {
+
+    color: #000;
+    font-size: 12px;
+    margin-bottom: 2px;
+    width: 270px;
+}
+*/
+
+.painel_esq {
+
+    border-radius: 90%;
+    border: 1px solid #000;
+    width: 55px;
+    height: 55px;
+    float: left;
+    font-family: Arial;
+    text-align: left;
+}
+
+.painel_dir {
+
+   text-align: left;
+   width: 200px;
+   float: right;
+}
+
+
+
+.fonte_Nome{
+
+    font-size:13px; 
+    margin-top:18px; 
+    position:absolute; 
+    color:#000;
+    margin-left: -120px;
+}
+
+.fonte_Prefixo{
+
+   font-size:22px;
+   color:#000; 
+   font-family:Arial;
+}
+
+
+
+.image_topo_linha {
+
+    background: url('../img/Topo_Tela_Horario_430_145.png') no-repeat;
+    width: 100%;
+    height:auto;
+}
+
+.fonte_Arrastar{
+
+    width: 475px; 
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.margin_topo_linha{
+
+    margin-top: 80px;
+    position: absolute;
+}
+
+.margin_topo_horario{
+
+    margin-top: 30px;
+    position: absolute;
+}
+
+.margin_topo_image{
+
+    margin-top: 20px; 
+    position: absolute;
+}
+
+.margin_topo_image_sogil{
+
+    margin-top: 25px; 
+    position: absolute;
+}
+
+.addBordaBaixo{
+
+ border-bottom:2px solid #ddd;
+}
+
+.addBordaCima{
+
+  border-top:2px solid #ddd;
+}
+
+.mytab tr:nth-child(odd) {
+    background-color: #fff;
+}
+
+.mytab tr:nth-child(even) {
+    background-color: #E5E0E0;
+}
+
+tr {
+
+   cursor:pointer;
+}
+
+
+.centro_tela{
+
+    position: absolute;
+    width: 380px;
+    height:200px;
+    top: 50%;
+    left: 50%;
+    margin-left: -190px;
+    margin-top: 130px;
+   
+}
+
+
+
+.fonte_preta{
+
+   color: #FFF;
+   font-family: Arial, Helvetica, sans-serif;
+   font-size: 16px;
+}
+
+/*.bar-subheader_pesquisa_onibus {
+    top: 44px;
+    display: block;
+    height: 210px;
+    background: #FFF;
+}
+
+
+.bar .button{
+
+   width:30px; 
+    text-align: center;
+    min-height: 44px;
+    min-width: 30px;
+    max-width: 30px;
+}*/
+
+/*
+.horarioseitinerarios .msg {
+    display: block;
+    float: left;
+    width: 235px;
+    min-height: 37px;
+    background: #D71920;
+    border: 1px solid #B7151A;
+    padding: 9px;
+    margin: 0;
+    color: #FFF;
+    font-size: 12px;
+    font-family: arial;
+    line-height: 150%;
+}*/
+
+.horarioseitinerarios{
+
+    width:100%;
+    height: 50px;
+    background: #FFF;
+    border: 0px solid #DDD;
+    padding: 6px;
+    margin-top: 8px;
+    margin-right: 5px;
+    left: 0;
+    color: #000;
+    font-size: 16px;
+    font-family: Arial;
+    text-align: center
+}
+
+
+
+.centro_tela_linha{
+
+    position: absolute;
+    width: 450px;
+    height:380px;
+    top: 50%;
+    left: 50%;
+    margin-left: -225px;
+    margin-top: 140px;
+    background: #fff;
+   
+}
+
+
+.fundo_tela_inicio {
+    background:url('../img/bg.jpg') top center no-repeat #E3D5A6 scroll;
+}
+
+
+.fundo_tela_onibus {
+    background:url('../img/tela_fundo_reportar_informacoes_2.png') top center no-repeat;
+}
+
+
+
+.Modal_botao_exibe_SelecionaTipoOnibus {
+    
+    height: 60px;
+    background: #2f3650;
+    border: 0px solid #808080;
+    color:#FFF;
+}
+
+.ModalSelecionaTipoOnibus {
+    
+    height: 210px;
+    background: #FFF;
+}
+
+
+
+.config_mapa{
+
+    position: absolute;
+    height: 735px; 
+    width: 100%; 
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    z-index: 2222;
+}
+
+.visivel{ display: block}
+
+.invisivel{ display: none}
+
+.medium{ border: 1px solid #ddd}
+
+
+.sombra {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 380px;
+    background-color: rgb(68,68,68);
+    -moz-box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+    -webkit-box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+    box-shadow: 5px 5px 5px rgba(68,68,68,0.6);
+    filter: progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Blur(PixelRadius=3,MakeShadow=true,ShadowOpacity=0.30)";
+    zoom: 1;
+}
+
+
+
+input[list]
+{
+  background: #ddd;
+  cursor: default;
+  border-bottom: 1px solid #808080;
+  height: 45px;
+}
+
+
+table {
+
+ width: 100%;
+
+}
+
+
+.scrollToTop {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+    text-align: center;
+    background: rgba(0,0,0,.6);
+    color: #fff !important;
+    position: fixed;
+    bottom: 75px;
+    right: 40px;
+    border-radius: 10%;
+    font-size: 40px;
+    text-decoration: none;
+    display: none;
+    opacity: 0.4;
+    filter: alpha(opacity=40);
+    transition-duration: 0.2s;
+}
+
+
+.posiciona_ione_left_header{
+
+    position: absolute; 
+    margin-top: -10px;
+    margin-left: -15px
+}
+
+
+.posiciona_ione_right_header{
+
+    position: absolute; 
+    margin-top: -10px;
+    margin-right: 0;
+    right: 10px;
+}
+
+
+.desc_contrato_licenca{
+
+  background: #ddd;
+  padding-top: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  color: #000;
+}
+
+.concordo {
+    position: absolute;
+    margin-top: -20px; 
+    margin-left: -10px;
+}
+
+.contrato_licenca{
+
+  position: absolute;
+  width: 450px;
+  height: 630px;
+  overflow: hidden; 
+  overflow-y: scroll;
+  background: #FFF;
+  border-top: 3px solid #808080;
+  border-left: 3px solid #808080;
+  margin-left: -225px;
+  margin-top: 80px;
+  top: 50%;
+  left: 50%;
+}
+
+
+.font_termo {
+
+    font-weight: bold;
+    color: #000;
+    size: 10px;
+}
+
+.pin_localiza{
+
+    position:absolute;
+	width:60px;
+	height:60px;
+	top:50%;
+	left:50%;
+    margin-left: 170px;
+    margin-top: -35px;
+    z-index: 9899999;
+    text-align: center;
+}
+
+
+.pin_centro {
+    
+    position:absolute;
+	width:60px;
+	height:60px;
+	top:50%;
+	left:50%;
+    margin-left: -30px;
+    margin-top: -35px;
+    z-index: 9899999;
+    text-align: center;
+}
+
+/* Fix modal backdrop for smaller devices */
+@media (max-width: 679px) {
+
+    .active .modal-backdrop-bg {
+        opacity: .5; }
+        .modal-backdrop-bg {
+        -webkit-transition: opacity 300ms ease-in-out;
+        transition: opacity 300ms ease-in-out;
+        background-color: #fff;
+        opacity: 0; 
+    } 
+
+}
+
+
+
+/* Media Queries*/
+@media screen and (min-width:300px) and (max-width: 450px) {
+
+
+.pin_localiza{
+
+    position:absolute;
+	width:50px;
+	height:50px;
+	top:50%;
+	left:50%;
+    margin-left: 130px;
+    margin-top: -25px;
+    z-index: 9899999;
+    text-align: center;
+}
+
+.Modal_botao_exibe_SelecionaTipoOnibus {
+    
+    height: 60px;
+    background: #2f3650;
+    border: 0px solid #808080;
+    color:#FFF;
+    font-size: 15px;
+}
+
+.concordo {
+    position: absolute;
+    margin-top: 5px; 
+    margin-left: 60px;
+}
+
+.loader_padrao {
+
+    position: relative;
+    margin: 0 auto;
+    width: 300px;
+    height: 5px;
+    /*zoom: 1.2;*/
+}
+
+
+.contrato_licenca{
+
+  position: absolute;
+  width: 330px;
+  height: 450px;
+  overflow: hidden; 
+  overflow-y: scroll;
+  background: #FFF;
+  border-top: 3px solid #808080;
+  border-left: 3px solid #808080;
+  margin-left: -165px;
+  margin-top: 80px;
+  top: 50%;
+  left: 50%;
+}
+
+.config_mapa{
+
+    position: absolute;
+    height: 520px; 
+    width: 100%; 
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 0px;
+    z-index: 2222;
+}
+
+
+.centro_tela_linha{
+
+    position: absolute;
+    width: 340px;
+    height:380px;
+    top: 50%;
+    left: 50%;
+    margin-left: -170px;
+    margin-top: 140px;
+    background: #fff;
+   
+}
+
+
+.item p {
+
+    color: #000;
+    font-size: 12px;
+    margin-bottom: 2px;
+    width: 270px;
+}
+
+
+.fonte_Prefixo{
+
+   font-size:12px;
+   color:#000; 
+   font-family:Arial;
+}
+
+
+.margin_topo_linha{
+
+    margin-top: 80px;
+    position: absolute;
+}
+
+.margin_topo_horario{
+
+    margin-top: 30px;
+    position: relative;
+}
+
+.fonte_Arrastar{
+
+    width: 355px; 
+    font-family: Arial, Helvetica, sans-serif;
+    text-align:center;
+}
+
+.fonte_Arrastar_horario{
+
+   font-size: 12px;
+   /*width: 360px;*/
+   height:80px;
+   font-family: Arial, Helvetica, sans-serif;
+}
+
+.fonte_Nome{
+
+    font-size:13px; 
+    margin-top:18px; 
+    position:absolute; 
+    color:#000;
+    margin-left: -12px;
+}
+
+
+.image_topo_linha {
+
+    background: url('../img/Topo_Tela_Horario.png') no-repeat;
+    /*width: auto;*/
+    height:auto;
+}
+
+.ion-modal_linhas {
+
+  width: 90%;
+  min-height: 0 !important;
+  height: 300px !important;
+  top: 10%;
+  left: 5%;
+  right: 5%;
+  bottom: 5%;
+  /*background-color: #FFF;*/
+
+  }
+
+
+.loader_inicia_onibus {
+
+    position: relative;
+    margin: 0 auto;
+    width: 180px;
+    height: 120px;
+    zoom: 1.2;
+}
+
+
+
+.divPrefixo{
+    
+    width: 80px;
+    height: 80px;
+    background-color: #ef4e3a;
+    box-shadow: 0 -6px 12px rgba(0, 0, 0, 0.2)
+}
+
+
+.painel_esq_horario {
+
+    width: 50px;
+    height: 50px;
+    float: left;
+    font-family: Arial;
+    text-align: left;
+}
+
+.painel_dir_horario {
+
+   text-align: left;
+   float: right;
+}
+
+
+.font_menus_tam_20
+{
+   font-weight: normal;
+}
+
+/*.btn-group-lg>.btn, .btn-lg {
+    padding: 10px 10px;
+    font-size: 18px;
+    line-height: 1.3333333;
+    border-radius: 6px;
+}*/
+
+.font_pop_tempo {
+
+    font-family: Arial, Helvetica, sans-serif ;
+    font-size: 13px;
+}
+
+  progress {
+        display: block;
+        margin: 10px auto;
+        width: 97%;
+        }
+
+ .font_duracao
+ {
+    font-size: 17px;
+    vertical-align: middle
+ }
+
+.popTempoOnibus {
+        
+        position: absolute;
+        width: 350px;
+        height: 200px;
+        top: 50%;
+        left: 50%;
+        margin-left: -175px;
+        margin-top: 20px;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -o-border-radius: 5px;
+        -ms-border-radius: 5px;
+        z-index: 9899999;
+        border: 1px solid #000;
+        background-color: #FFF;
+        zoom: 1.1;
+        color:#000;
+    }
+
+
+.popContaTempoOnibus {
+        
+        position: absolute;
+        width: 310px;
+        height: 150px;
+        top: 50%;
+        left: 50%;
+        margin-left: -155px;
+        margin-top: -85px;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -o-border-radius: 5px;
+        -ms-border-radius: 5px;
+        z-index: 9899999;
+        border: 2px solid #000;
+        background-color: #FFF;
+        zoom: 1.1;
+        color:#000;
+    }
+
+    .pop_chegada_onibus {
+
+        position: absolute;
+        width: 310px;
+        height:180px;
+        top: 50%;
+        left: 50%;
+        margin-left: -155px;
+        margin-top: 100px;
+        border-radius: 5px;
+        -webkit-border-radius: 5px;
+        -moz-border-radius: 5px;
+        -o-border-radius: 5px;
+        -ms-border-radius: 5px;
+        z-index: 9899999;
+        border: 3px solid darkorange;
+        background-color:#fff;
+        zoom: 1.1;
+        color:#000;
+        font-size: 16px;
+    }
+
+    .Fundo {
+
+    height: 750px;
+    width: 100%;
+    margin-top: 0;
+    position: absolute; 
+    margin-left: 0px;
+    margin-right: 0;
+    background: rgba(16, 16, 16, 0.6);
+    
+    }
+
+}
+
+
+/* Telefones em paisagem e abaixo */
+@media (max-width: 480px) { 
+     /* estilos aqui */
+ }
+ 
+/* Telefones em paisagem a tablet em retrato */
+@media (max-width: 767px) {
+     /* estilos aqui */
+}
+ 
+/* Tablet em retrato a paisagem e desktop */
+@media (min-width: 768px) and (max-width: 979px) {
+     /* estilos aqui */
+}
+ 
+/* Desktop grande */
+@media (min-width: 1200px) {
+    /* estilos aqui */
+}

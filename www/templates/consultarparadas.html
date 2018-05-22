@@ -1,0 +1,35 @@
+﻿<ion-view view-title="Consultar paradas">
+	<ion-content>
+
+		<div class="container-fluid">
+			<div class="row">
+				
+					<button class="button button-full button-large button-positive" ng-click="select();">
+					Consultar Paradas
+					</button>
+					<button class="button button-full button-large button-positive" ng-click="ExportarParadas();">
+					Exportar Paradas
+					</button>
+					<form id="form1" class="form-inline" ng-submit="apagar();;" ng-controller="CtrlConsultarParadas">
+						<button id="btnDelete" class="button button-full button-large button-assertive" value="Apagar">
+						Excluir Parada
+						</button>
+
+						<div class="form-group-lg">
+							<div class="col-md-2">
+								<label class="control-label"><b>Informe o Id da Parada a ser excluir</b></label>
+							</div>
+							<div class="col-md-10">
+								<input type="text" id="dsParada" placeholder="informe ID Excluir" ng-model="nroID" class="form-control" autofocus/>
+							</div>
+						</div>
+					</form>
+					<table id="tbParadas" class="table table-responsive" style="font-size:10px">
+					</table>
+					<label id="lbTotal"></label>
+				
+			</div>
+		</div>
+
+	</ion-content>
+</ion-view>
